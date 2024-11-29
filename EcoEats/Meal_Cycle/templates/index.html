@@ -15,9 +15,10 @@
             <li><a href="#" onclick="showSection('about')">About</a></li>
             <li><a href="#" onclick="showSection('how-it-works')">How It Works</a></li>
             <li><a href="#" onclick="showSection('features')">Features</a></li>
-            <li><a href="#" onclick="showSection('donate')">Donate Food</a></li>
-            <li><a href="#" onclick="showSection('request-food')">Request Food</a></li>
-            <li><a href="#" onclick="showSection('cta')">Get Started</a></li>
+            <li><a href="#" onclick="showSection('donateForm')">Donate Food</a></li>
+            <li><a href="#" onclick="showSection('requestForm')">Request Food</a></li>
+            <li><a href="#" onclick="showSection('impactTracker')">Impact Tracker</a></li>
+            <li><a href="#" onclick="showSection('recipes')">Leftover Recipes</a></li>
         </ul>
     </nav>
 
@@ -66,94 +67,120 @@
     </ul>
 </section>
 
-   <!-- Donate Section -->
-<section id="donateForm" class="section">
+ <!-- Donate Section -->
+<section id="donateForm" class="section" style="display: none;">
     <h2>Donate Food</h2>
     <p>Donate your extra food to help people in need. Choose the food type and quantity, and make a difference!</p>
     <form id="donateForm">
-        <div>
-            <label for="donor-name">Your Name:</label>
-            <input type="text" id="donor-name" name="donor-name" required>
-        </div>
-        
-        <div>
-            <label for="food-name">Food Name:</label>
-            <input type="text" id="food-name" name="food-name" required>
-        </div>
-        
-        <div>
-            <label for="food-type">Food Type:</label>
-            <select id="food-type" name="food-type" onchange="updateUnitOptions('donate')" required>
-                <option value="liquid">Liquid</option>
-                <option value="solid">Solid</option>
-                <option value="bottle">Bottle</option>
-            </select>
-        </div>
-        
-        <div>
-            <label for="quantity">Quantity:</label>
-            <input type="number" id="quantity" name="quantity" required>
-        </div>
-        
-        <div>
-            <label for="unit-of-measurement">Unit of Measurement:</label>
-            <select id="unit-of-measurement" name="unit-of-measurement" required>
-                <!-- Options dynamically populated -->
-            </select>
-        </div>
+        <label for="donor-name">Your Name:</label>
+        <input type="text" id="donor-name" name="donor-name" required>
 
-        <div>
-            <label for="expiry-date">Expiry Date:</label>
-            <input type="date" id="expiry-date" name="expiry-date" required>
-        </div>
-        
-        <div>
-            <button type="submit">Donate Food</button>
-        </div>
+        <label for="food-name">Food Name:</label>
+        <input type="text" id="food-name" name="food-name" required>
+
+        <label for="food-type">Food Type:</label>
+        <select id="food-type" name="food-type" onchange="updateUnitOptions('donate')" required>
+            <option value="liquid">Liquid</option>
+            <option value="solid">Solid</option>
+            <option value="bottle">Bottle</option>
+        </select>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" required>
+
+        <label for="unit-of-measurement">Unit of Measurement:</label>
+        <select id="unit-of-measurement" name="unit-of-measurement" required></select>
+
+        <label for="expiry-date">Expiry Date:</label>
+        <input type="date" id="expiry-date" name="expiry-date" required>
+
+        <!-- New Recipe Section -->
+        <label for="recipe-name">Recipe Name (Optional):</label>
+        <input type="text" id="recipe-name" name="recipe-name">
+
+        <label for="recipe-description">Recipe Description (Optional):</label>
+        <textarea id="recipe-description" name="recipe-description" rows="4"></textarea>
+
+        <button type="submit">Donate Food</button>
     </form>
 </section>
 
+<table id="donated-food-table">
+    <thead>
+        <tr>
+            <th>Donor Name</th>
+            <th>Food Name</th>
+            <th>Food Type</th>
+            <th>Quantity</th>
+            <th>Unit of Measurement</th>
+            <th>Expiry Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data rows will be inserted here -->
+    </tbody>
+</table>
+
 <!-- Request Section -->
-<section id="requestForm" class="section">
+<section id="requestForm" class="section" style="display: none;">
     <h2>Request Food</h2>
     <p>If you are in need of food, you can request it here. Provide details of the food you're looking for and we'll connect you with donors.</p>
     <form id="requestForm">
-        <div>
-            <label for="requester-name">Name:</label>
-            <input type="text" id="requester-name" name="requester-name" required>
-        </div>
-        
-        <div>
-            <label for="requested-food">Food Needed:</label>
-            <input type="text" id="requested-food" name="requested-food" required>
-        </div>
-        
-        <div>
-            <label for="food-type-request">Food Type:</label>
-            <select id="food-type-request" name="food-type-request" onchange="updateUnitOptions('request')" required>
-                <option value="liquid">Liquid</option>
-                <option value="solid">Solid</option>
-                <option value="bottle">Bottle</option>
-            </select>
-        </div>
-        
-        <div>
-            <label for="quantity-requested">Quantity:</label>
-            <input type="number" id="quantity-requested" name="quantity-requested" required>
-        </div>
-        
-        <div>
-            <label for="unit-of-measurement-request">Unit of Measurement:</label>
-            <select id="unit-of-measurement-request" name="unit-of-measurement-request" required>
-                <!-- Options dynamically populated -->
-            </select>
-        </div>
-        
-        <div>
-            <button type="submit">Request Food</button>
-        </div>
+        <label for="requester-name">Name:</label>
+        <input type="text" id="requester-name" name="requester-name" required>
+
+        <label for="requested-food">Food Needed:</label>
+        <input type="text" id="requested-food" name="requested-food" required>
+
+        <label for="food-type-request">Food Type:</label>
+        <select id="food-type-request" name="food-type-request" onchange="updateUnitOptions('request')" required>
+            <option value="liquid">Liquid</option>
+            <option value="solid">Solid</option>
+            <option value="bottle">Bottle</option>
+        </select>
+
+        <label for="quantity-requested">Quantity:</label>
+        <input type="number" id="quantity-requested" name="quantity-requested" required>
+
+        <label for="unit-of-measurement-request">Unit of Measurement:</label>
+        <select id="unit-of-measurement-request" name="unit-of-measurement-request" required></select>
+
+        <button type="submit">Request Food</button>
     </form>
 </section>
+
+<table id="requested-food-table">
+    <thead>
+        <tr>
+            <th>Requester Name</th>
+            <th>Requested Food</th>
+            <th>Food Type</th>
+            <th>Quantity</th>
+            <th>Unit of Measurement</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Data rows will be inserted here -->
+    </tbody>
+</table>
+
+    <!-- Leftover Recipes -->
+    <section id="recipes" class="section" style="display: none;">
+        <h2>Leftover Recipes</h2>
+        <p>Creative recipes to help reduce food wastage at home:</p>
+        <ul id="recipeList">
+            <!-- Recipes will be dynamically loaded -->
+        </ul>
+    </section>
+    
+    
+    <!-- Environmental Impact Tracker -->
+    <section id="impactTracker" class="section" style="display: none;">
+        <h2>Environmental Impact Tracker</h2>
+        <p>Track how much food has been saved from landfills and see the reduced carbon footprint:</p>
+        <p><strong>Total Food Saved:</strong> <span id="totalFoodSaved">0</span> kg</p>
+        <p><strong>Carbon Footprint Reduction:</strong> <span id="carbonReduction">0</span> kg CO2</p>
+    </section>
 
      <!-- Call to Action Section -->
      <section id="cta" class="cta-section">
