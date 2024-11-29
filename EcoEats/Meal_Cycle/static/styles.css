@@ -6,37 +6,57 @@ body {
     background-color: #f4f4f9;
 }
 
-header {
+nav {
     background-color: #4CAF50;
-    color: white;
+    padding: 10px 0;
     text-align: center;
-    padding: 20px;
 }
 
-h1, h2 {
-    font-size: 24px;
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
 }
 
-.form-container {
-    margin: 20px;
-    padding: 20px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
 }
 
-input[type="text"],
-input[type="number"],
-input[type="date"] {
-    width: 100%;
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #45a049;
+}
+
+/* General Styles */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input, select, button {
     padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    margin: 5px 0;
 }
 
 button {
     background-color: #4CAF50;
     color: white;
-    padding: 10px;
     border: none;
     cursor: pointer;
 }
@@ -45,14 +65,120 @@ button:hover {
     background-color: #45a049;
 }
 
-.request-list ul {
-    list-style-type: none;
-    padding: 0;
+/* Positioning of Expiry Date Below Unit of Measurement */
+#donateForm, #requestForm {
+    max-width: 600px;
+    margin: 20px auto;
 }
 
-.request-list li {
-    padding: 10px;
-    margin: 10px 0;
+#expiry-date, #unit-of-measurement, #unit-of-measurement-request {
+    margin-top: 10px;
+}
+
+/* Section Styles */
+.section {
+    display: none;
+    padding: 50px 20px;
+    margin-top: 20px;
+}
+
+.hero-section {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-section h1 {
+    font-size: 48px;
+}
+
+.hero-section .cta-button {
+    display: inline-block;
+    padding: 15px 30px;
+    margin-top: 20px;
+    background-color: white;
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.hero-section .cta-button:hover {
+    background-color: #45a049;
+}
+
+/* About Section */
+#about {
+    background-color: #fff;
+}
+
+#how-it-works .steps {
+    display: flex;
+    justify-content: space-around;
+}
+
+#how-it-works .step {
+    width: 30%;
+    padding: 20px;
     background-color: #fff;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Features Section */
+#features ul {
+    padding-left: 20px;
+}
+
+#features ul li {
+    margin: 10px 0;
+}
+
+/* Donate and Request Food Section */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form input,
+form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    border: none;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+/* Call to Action Section */
+.cta-section {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.cta-section .cta-button {
+    background-color: white;
+    color: #4CAF50;
+    font-size: 18px;
+}
+
+.cta-section .cta-button:hover {
+    background-color: #45a049;
 }
