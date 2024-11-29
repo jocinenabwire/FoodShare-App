@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoEats - MealCycle</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles.css' %}">  <!-- Link to CSS -->
+</head>
+<body>
+    <header>
+        <h1>Welcome to EcoEats - MealCycle</h1>
+    </header>
+
+    <!-- Donor Form -->
+    <div class="form-container">
+        <h2>Donate Food</h2>
+        <form id="donateForm">
+            <label for="donor-name">Name:</label>
+            <input type="text" id="donor-name" name="donor-name" required>
+
+            <label for="food-name">Food Name:</label>
+            <input type="text" id="food-name" name="food-name" required>
+
+            <label for="quantity">Quantity:</label>
+            <input type="number" id="quantity" name="quantity" required>
+
+            <label for="expiry-date">Expiry Date:</label>
+            <input type="date" id="expiry-date" name="expiry-date" required>
+
+            <button type="submit">Donate Food</button>
+        </form>
+    </div>
+
+    <!-- Food Request List -->
+    <div class="request-list">
+        <h2>Food Requests</h2>
+        <ul id="food-request-list">
+            <!-- Requests will appear here dynamically -->
+        </ul>
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>  <!-- Link to JS -->
+</body>
+</html>
