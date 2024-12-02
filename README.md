@@ -119,5 +119,7 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## **Contact**
 For any questions or feedback:
-- **Name**: Jocine
-- **GitHub**: [Your GitHub Profile]
+- **Name**: Jocine Nabwire
+          : Ian Kabiro
+- **Email**: jocinenabwire01@gmail.com
+           : terschegen@gmail.com
