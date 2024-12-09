@@ -1,4 +1,4 @@
-# ** ECO EATS - MEAL CYCLE
+# ECO EATS - MEAL CYCLE
 **Food Donation & Request Management System**
 
 ## **Project Overview**
@@ -120,6 +120,4 @@ This project is licensed under the [MIT License](LICENSE).
 ## **Contact**
 For any questions or feedback:
 - **Name**: Jocine Nabwire
-          : Ian Kabiro
 - **Email**: jocinenabwire01@gmail.com
-           : terschegen@gmail.com
